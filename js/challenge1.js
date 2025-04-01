@@ -1,13 +1,20 @@
-document.getElementById("toggle").addEventListener('click', function () {
-    console.log("Checkbox clicked");
+document.addEventListener("DOMContentLoaded", function () {
+    const heading = document.querySelector("h1");
+    heading.classList.add("styled-heading");
 
-    let emailBox = document.querySelector("#emailBox");
-
-    if (this.checked) {
-        console.log("Checkbox is checked, showing email field");
-        emailBox.style.display = 'block';
-    } else {
-        console.log("Checkbox is unchecked, hiding email field");
-        emailBox.style.display = 'none';
-    }
-});
+    document.body.addEventListener("dblclick", function () {
+      alert("Current Time: " + new Date().toLocaleTimeString());
+    });
+  
+    const toggle = document.getElementById("toggle");
+    const emailBox = document.getElementById("emailBox");
+  
+    toggle.addEventListener("change", function () {
+      if (this.checked) {
+        emailBox.classList.remove("hidden");
+      } else {
+        emailBox.classList.add("hidden");
+      }
+    });
+  });
+  

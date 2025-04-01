@@ -1,15 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const billingInput = document.getElementById("billing");
-    const homeInput = document.getElementById("home");
-    const checkbox = document.querySelector("input[name='useBilling']");
 
+    const billingTextarea = document.getElementById("billing");
+    console.log(billingTextarea.value.trim());
+  
+
+    const checkbox = document.querySelector("input[name='useBilling']");
+    const homeTextarea = document.getElementById("home");
+  
     checkbox.addEventListener("change", function () {
-        if (this.checked) {
-            homeInput.value = billingInput.value;
-            homeInput.disabled = true;
-        } else {
-            homeInput.value = "";
-            homeInput.disabled = false;
-        }
+      if (this.checked) {
+
+        homeTextarea.value = billingTextarea.value;
+        homeTextarea.disabled = true;
+      } else {
+
+        homeTextarea.value = "";
+        homeTextarea.disabled = false;
+      }
     });
-});
+  });
+  
